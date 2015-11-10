@@ -3,6 +3,11 @@ ruby '2.0.0'
 #ruby-gemset=railstutorial_rails_4_0
 
 gem 'rails', '4.0.5'
+gem 'bootstrap-sass', '3.0.3.0'
+gem 'sprockets', '2.11.0'
+gem 'less-rails'
+gem 'therubyracer'
+gem 'twitter-bootstrap-rails'
 
 group :development, :test do
   gem 'sqlite3', '1.3.8'
