@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  has_many :microposts, dependent: :destroy
   has_secure_password
 
   before_save { email.downcase! }
@@ -18,6 +19,12 @@ class User < ActiveRecord::Base
 
   def User.encrypt(token)
     Digest::SHA1.hexdigest(token.to_s)
+  end
+
+  def feed
+    # このコードは準備段階です。
+    # 完全な実装は第１１章「ユーザーをフォローする」を参考してください。
+    Micropost.where("user_id = ?", id)
   end
 
   private
